@@ -9,6 +9,7 @@ var Item = require('../models/item');
 var User = require('../models/user');
 
 router.get('/', function(req, res, next) {
+	console.log
 	Trade.findAll(function(err, trades) {
 		res.status(err ? 400 : 200).send(err || trades);
 	});
@@ -30,11 +31,10 @@ router.put('/reject/:id', function(req, res, next) {
 
 router.put('/accept/:id', function(req, res, next) {
 	Trade.findById(req.params.id, function(err, trade) {
-		console.log(trade.senderId._id)
+		// console.log(trade.senderId._id)
 		res.status(err ? 400 : 200).send(err || trade);
-  }).populate('senderId');
+  }).populate('senderId senderItemsIds receiverItemsIds');
 });
-
 
 router.post('/', function(req, res, next) {
 	Trade.create(req.body, function(err, trade) {
