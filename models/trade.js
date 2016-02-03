@@ -5,21 +5,15 @@ var mongoose  = require('mongoose');
 var Trade;
 
 var tradeSchema = mongoose.Schema({
-	senderId: { 
-		type: mongoose.Schema.Types.ObjectId, ref: 'User'
-	},
-	receiverId: { 
-		type: mongoose.Schema.Types.ObjectId, ref: 'User'
-	},
 	status: {type: String, default: 'Proposed', enum: ['Proposed', 'Accepted', 'Rejected']},
 	dateProposed: {type: Date, default: Date.now},
 	dateCompleted: {type: Date},
-	senderItemsIds: [{
+	senderItemId: {
 		type: mongoose.Schema.Types.ObjectId, ref: 'Item'
-	}],
-	receiverItemsIds: [{
+	},
+	receiverItemId: {
 		type: mongoose.Schema.Types.ObjectId, ref: 'Item'
-	}],
+	},
 });
 
 tradeSchema.statics.create = function(tradeObj, cb) {
@@ -33,15 +27,28 @@ tradeSchema.statics.findAll = function(cb) {
   	});
 }
 
-tradeSchema.methods.reject = function(cb){
-	this.status = 'Rejected';
-	this.save(cb);
+tradeSchema.statics.accept = function(id,cb) {
+	Trade.findById(id, function(err, trade) {
+		if (err || !trade) cb(err,null);
+		var receiverId = trade.receiverItemId.user;
+		var senderId = trade.senderItemId.user;
+		trade.senderItemId.user = receiverId;
+		trade.senderItemId.save(function (err, item){
+			if (err) cb(err,null);
+			trade.receiverItemId.user = senderId;
+			trade.receiverItemId.save(function (err, item){
+				if (err) cb(err,null);
+				trade.status = 'Accepted';
+				trade.save(cb);
+			});
+		});
+  }).populate('senderItemId receiverItemId');
 }
 
-tradeSchema.methods.accept = function(cb){
-	this.status = 'Accepted';
-	this.save(cb);
-}
+// tradeSchema.methods.reject = function(cb){
+// 	this.status = 'Rejected';
+// 	this.save(cb);
+// }
 
 
 var Trade = mongoose.model('Trade', tradeSchema);
