@@ -7,7 +7,9 @@ var User = require('../models/user');
 var authMW = require('../config/auth');
 
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+ 	User.find({}, function(err, savedUsers) {
+    	res.status(err ? 400 : 200).send(err || savedUsers);
+  	});
 });
 
 router.post('/register', function(req, res, next) { //remove next

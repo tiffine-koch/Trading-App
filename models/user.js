@@ -39,9 +39,6 @@ userSchema.methods.generateToken = function() {
     _id: this._id
   };
   var token = jwt.encode(payload, JWT_SECRET);
-  // console.log(JWT_SECRET);
-  // console.log(payload);
-  // console.log(token);
   return token;
 }
 
