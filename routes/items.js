@@ -3,8 +3,8 @@ var router = express.Router();
 
 var mongoose  = require('mongoose');
 
-
 var Item = require('../models/item');
+
 
 router.get('/', function(req, res, next) {
 	Item.findAll(function(err, items) {

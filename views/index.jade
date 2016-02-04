@@ -1,42 +1,52 @@
 extends layout
 
 block styles
-  link(rel="stylesheet", href="/css/index.css")
   link(href='https://fonts.googleapis.com/css?family=News+Cycle:400,700', rel='stylesheet', type='text/css')
+  link(rel="stylesheet", href="/css/index.css")
+
 
 block content
-  h1= title
-  p Welcome to Cow Meets Goat
+  h1 Welcome to Cow Meets Goat
+  .container.col-xs-6
+    h2
+      | Connect with friends and barter
+      br
+      | around the world on Cow meets Goat.
+    .mtl.pbm
+      ._6a._6b.mrl(style='text-align: center; width: 55px')
+        img.img(src='https://scontent.fsnc1-1.fna.fbcdn.net/hphotos-xpa1/t39.2365-6/851565_602269956474188_918638970_n.png', alt='', style='vertical-align: middle')
+      ._6a._6b.product_desc
+        span.mtl._3ma._6p._6s._6v  See photos and trades 
+        span.mlm._6q._6t._mf  from friends on your profile. 
+    .mtl.pbm
+      ._6a._6b.mrl(style='text-align: center; width: 55px')
+        img.img(src='https://scontent.fsnc1-1.fna.fbcdn.net/hphotos-xaf1/t39.2365-6/851585_216271631855613_2121533625_n.png', alt='', style='vertical-align: middle')
+      ._6a._6b.product_desc
+        span.mtl._3ma._6p._6s._6v  Share your new items
+        span.mlm._6q._6t._mf  in our inventory list. 
+    .mtl.pbm
+      ._6a._6b.mrl(style='text-align: center; width: 55px')
+        img.img(src='https://scontent.fsnc1-1.fna.fbcdn.net/hphotos-xtp1/t39.2365-6/851558_160351450817973_1678868765_n.png', alt='', style='vertical-align: middle')
+      ._6a._6b.product_desc
+        span.mtl._3ma._6p._6s._6v  Find more of what you're looking
+        span.mlm._6q._6t._mf   for with Cow meets Goat Search. 
 
-  button.btn.btn-danger(type='submit') Start Bartering!
-
-
-  //- container#login.section
-  //- h1 Login
-  //-   form
-  //-     .form-group
-  //-       label(for='email') Email address
-  //-       input#email.form-control(type='email', placeholder='Email')
-  //-     .form-group
-  //-       (for='password') Password
-  //-       input#password.form-control(type='password', placeholder='Password')
-    //- button.btn.btn-default(type='submit') Login
-
-
-  //- container#register.section
-  //-   h1 Register
-  //-   form
-  //-     .form-group
-  //-       label(for='email') Email address
-  //-       input#email.form-control(type='email', placeholder='Email')
-  //-     .form-group
-  //-       label(for='password') Password
-  //-       input#password.password.form-control(type='password', placeholder='Password')
-  //-     .form-group
-  //-       label(for='password2') Password (again)
-  //-       input#password2.password.form-control(type='password', placeholder='Password')
-  //-   button.btn.btn-default(type='submit') Register
+  #register.container.col-xs-6
+    h2 Register
+    form#registerUser
+      .form-group
+        label(for='email') Email address
+        input#emailR.form-control(type='email', placeholder='Email')
+      .form-group
+        label(for='password') Password
+        input#passwordR.password.form-control(type='password', placeholder='Password')
+      .form-group
+        label(for='password2') Password (again)
+        input#passwordR2.password.form-control(type='password', placeholder='Password')
+      button.btn.btn-default(type='submit') Register
 
 block scripts
-//- script(src="/lib/firebase/firebase.js")
-script(src="/js/index.js")
+  script(src="/js/login.js")
+
+
+

@@ -1,8 +1,15 @@
 body {
-  padding: 20px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url(/img/download.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-a {
-  color: #00B7FF;
+#myContainer {
+  background-color: rgb(53,63,69);
+  opacity: .95;
+  border-radius: 10px;
+}
+
+#loginUser {
+	display: none;
 }

@@ -3,34 +3,33 @@ html
   head
     title Cow Meets Goat
     link(rel='stylesheet', href='/lib/bootstrap/dist/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/css/index.css')
+    link(rel='stylesheet', href='/lib/slate/slate.css')
+    link(rel='stylesheet', href='/css/style.css')
     block styles
-    
   body
     nav.navbar.navbar-default.navbar-static-top
       .container
         .navbar-header
-          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar')
             span.sr-only Toggle navigation
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand(href='/') Cow Meets Goat
+          a.homePageUrl.navbar-brand(href='/') Cow Meets Goat
         #navbar.navbar-collapse.collapse
           ul.nav.navbar-nav
             li
-              a(href='/') Home
+              a.homePageUrl(href='/') Home
           ul.nav.navbar-nav.navbar-right
-            li
-              a(href='/register') Register
-            li
-              a(href='/login') Login
-            li
+            form#loginUser.navbar-form.navbar-left(role='search')
+              .form-group
+                input#emailL.form-control(type='text', placeholder='Email')
+                input#passwordL.form-control(type='text', placeholder='Password')
+              button.btn.btn-default(type='submit') Login
+            li#logoutDisplay
               a(href='/users/logout') Logout
-
-    .container
+    .container#myContainer
       block content
-
     script(src='/lib/jquery/dist/jquery.min.js')
     script(src='/lib/bootstrap/dist/js/bootstrap.min.js')
     block scripts

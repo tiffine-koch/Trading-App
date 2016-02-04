@@ -24,6 +24,11 @@ router.post('/login', function(req, res, next) {
 	});
 });
 
+router.get('/logout', function(req, res, next) {
+  res.clearCookie('mytoken').redirect('/');
+});
+
+
 
 
 module.exports = router;
