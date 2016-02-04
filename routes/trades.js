@@ -25,7 +25,7 @@ router.put('/reject/:id', function(req, res, next) {
 	Trade.findById(req.params.id, function(err, trade) {
 		trade.reject(function(err, savedTrade){
     		res.status(err ? 400 : 200).send(err || savedTrade);
-		});
+		})
   });
 });
 
