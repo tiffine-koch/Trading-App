@@ -1,4 +1,23 @@
 extends layout
 
+block styles
+  link(rel="stylesheet", href="/css/userPage.css")
+
 block content
-	h1 User Page
+  if admin
+    h1 My Page
+  else
+    h1 #{user.profileName}'s Page
+  .container.col-xs-2
+    h2 Profile Pic
+    if user.iUrl
+      img(src= user.iUrl)
+    else
+      img(src='/img/defaultImage.jpg')
+  .container.col-xs-1.test
+    h2 Name: 
+    label Description: 
+  .container.col-xs-9.paddingLittle
+    h2= user.profileName
+    p= user.blurb
+  

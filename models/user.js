@@ -13,12 +13,9 @@ var User;
 
 var userSchema = mongoose.Schema({
   firebaseId: {type: String},
-  name: {
-    first: String,
-    last: String
-  },
-  email: String,
-  iUrl: String
+  profileName: {type: String, default: "Guest Chicken "+Math.floor(Math.random()*1000)},
+  iUrl: String,
+  blurb: {type: String, default: "I love long walks on the beach. I love to travel. Looking for a good time and a great deal! My Chicken yo goats!"}
 });
 
 userSchema.statics.register  = function (userObj, cb) { // data in proper format

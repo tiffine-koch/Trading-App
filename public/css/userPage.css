@@ -1,0 +1,23 @@
+
+
+#myContainer {
+	padding-bottom: 20px;
+}
+
+h1 {
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 7px;
+  border-bottom: 5px solid rgb(198,198,198);
+  border-radius: 5px;
+}
+
+img {
+	max-height: 200px;
+	max-width: 100%;
+}
+
+.paddingLittle {
+	padding-left: 50px;
+}

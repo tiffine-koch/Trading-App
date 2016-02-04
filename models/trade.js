@@ -5,6 +5,12 @@ var mongoose  = require('mongoose');
 var Trade;
 
 var tradeSchema = mongoose.Schema({
+	originalSenderId: {
+		type: mongoose.Schema.Types.ObjectId, ref: 'Item'
+	},
+	originalRecieverId: {
+		type: mongoose.Schema.Types.ObjectId, ref: 'Item'
+	},
 	status: {type: String, default: 'Proposed', enum: ['Proposed', 'Accepted', 'Declined', 'Offer Invalid']},
 	dateProposed: {type: Date, default: Date.now},
 	dateCompleted: {type: Date},
