@@ -1,5 +1,5 @@
-#splash {
-  background-image: url(download.jpeg);
+body {
+  background-image: url(/img/download.jpg);
   background-size: cover;
   background-position: top right;
   background-position-x: 100%;
@@ -9,15 +9,19 @@
 
 h1 {
   margin-top: 400px;
-  color: white;
+  color: blue;
   font-size: 46px;
   font-weight: bold;
+  font-family: 'News Cycle', sans-serif;
+  /*margin-right: 20px;*/
 }
 
 p {
-  color: white;
+  color: blue;
   font-size: 20px;
   font-weight: bold;
+  /*margin-right: 600px;*/
+  font-family: 'News Cycle', sans-serif;
 }
 h4 {
   color: blue;

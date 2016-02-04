@@ -2,14 +2,41 @@ extends layout
 
 block styles
   link(rel="stylesheet", href="/css/index.css")
+  link(href='https://fonts.googleapis.com/css?family=News+Cycle:400,700', rel='stylesheet', type='text/css')
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to Cow Meets Goat
 
-  #splash
+  button.btn.btn-danger(type='submit') Start Bartering!
 
+
+  //- container#login.section
+  //- h1 Login
+  //-   form
+  //-     .form-group
+  //-       label(for='email') Email address
+  //-       input#email.form-control(type='email', placeholder='Email')
+  //-     .form-group
+  //-       (for='password') Password
+  //-       input#password.form-control(type='password', placeholder='Password')
+    //- button.btn.btn-default(type='submit') Login
+
+
+  //- container#register.section
+  //-   h1 Register
+  //-   form
+  //-     .form-group
+  //-       label(for='email') Email address
+  //-       input#email.form-control(type='email', placeholder='Email')
+  //-     .form-group
+  //-       label(for='password') Password
+  //-       input#password.password.form-control(type='password', placeholder='Password')
+  //-     .form-group
+  //-       label(for='password2') Password (again)
+  //-       input#password2.password.form-control(type='password', placeholder='Password')
+  //-   button.btn.btn-default(type='submit') Register
 
 block scripts
-  //- script(src="/lib/firebase/firebase.js")
-  //- script(src="/js/index.js")
+//- script(src="/lib/firebase/firebase.js")
+script(src="/js/index.js")
