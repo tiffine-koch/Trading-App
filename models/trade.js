@@ -5,7 +5,7 @@ var mongoose  = require('mongoose');
 var Trade;
 
 var tradeSchema = mongoose.Schema({
-	status: {type: String, default: 'Proposed', enum: ['Proposed', 'Accepted', 'Declined']},
+	status: {type: String, default: 'Proposed', enum: ['Proposed', 'Accepted', 'Declined', 'Offer Invalid']},
 	dateProposed: {type: Date, default: Date.now},
 	dateCompleted: {type: Date},
 	senderItemId: {
@@ -41,14 +41,21 @@ tradeSchema.statics.accept = function(id,cb) {
 				trade.status = 'Accepted';
 				trade.save(function(err, savedTrade){
 
-					Trade.find({$or: [
-											{'senderItemId': trade.senderItemId._id}, 
-											{'senderItemId': trade.receiverItemId._id},
-										  {'receiverItemId': trade.senderItemId._id},
-										  {'receiverItemId': trade.receiverItemId._id}
-										  ]}, function(err, invalidTrades){
+					Trade.update({
+												$and:[
+																{$or:
+																	[
+																	{'senderItemId': trade.senderItemId._id}, 
+																	{'senderItemId': trade.receiverItemId._id},
+																  {'receiverItemId': trade.senderItemId._id},
+																  {'receiverItemId': trade.receiverItemId._id}
+													  			]
+													  		},
+																{'status':'Proposed'}
+															]
+												},{status:'Offer Invalid'}, {multi:true}, function(err, invalidTrades){
 							cb(err,invalidTrades);
-						}).and({'status':'Proposed'});
+						});
 
 				});
 			});
