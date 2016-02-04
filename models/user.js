@@ -23,7 +23,7 @@ userSchema.statics.register  = function (userObj, cb) { // data in proper format
     return cb("Missing required field (email, password)");
   }
   ref.createUser(userObj, function(err, userData) {
-    if (err) return cb(err); // checks for duplicate emails
+    if (err) return cb(err);
     var user = new User();
     user.firebaseId = userData.uid;
     user.save(cb);

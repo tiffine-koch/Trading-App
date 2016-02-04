@@ -35,13 +35,13 @@ block content
     form#registerUser
       .form-group
         label(for='email') Email address
-        input#emailR.form-control(type='email', placeholder='Email')
+        input#emailR.form-control(type='email', placeholder='Email' required)
       .form-group
         label(for='password') Password
-        input#passwordR.password.form-control(type='password', placeholder='Password')
+        input#passwordR.password.form-control(type='password', placeholder='Password' required)
       .form-group
         label(for='password2') Password (again)
-        input#passwordR2.password.form-control(type='password', placeholder='Password')
+        input#passwordR2.password.form-control(type='password', placeholder='Password' required)
       button.btn.btn-default(type='submit') Register
 
 block scripts

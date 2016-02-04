@@ -5,14 +5,10 @@
 	padding-bottom: 20px;
 }
 
-h1 {
-  font-size: 70px;
-  font-weight: bold;
-  text-align: center;
-  border-bottom: 5px solid rgb(198,198,198);
-  border-radius: 5px;
-}
-
 h2 {
 	text-align: center;
+}
+
+#registerUser {
+	padding-top: 30px;
 }

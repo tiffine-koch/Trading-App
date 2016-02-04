@@ -23,8 +23,8 @@ html
           ul.nav.navbar-nav.navbar-right
             form#loginUser.navbar-form.navbar-left(role='search')
               .form-group
-                input#emailL.form-control(type='text', placeholder='Email')
-                input#passwordL.form-control(type='password', placeholder='Password')
+                input#emailL.form-control(type='email', placeholder='Email' required)
+                input#passwordL.form-control(type='password', placeholder='Password' required)
               button.btn.btn-default(type='submit') Login
             li#logoutDisplay
               a(href='/users/logout') Logout

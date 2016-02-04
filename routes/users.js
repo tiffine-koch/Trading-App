@@ -20,6 +20,7 @@ router.post('/register', function(req, res, next) { //remove next
 
 router.post('/login', function(req, res, next) {
 	User.login(req.body, function(err, token) {
+		if (err) return res.status(400).send(err);
 		res.cookie('mytoken', token).send();
 	});
 });

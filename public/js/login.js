@@ -20,8 +20,8 @@ function loginUser(e) {
     location.href = '/';
   })
   .fail(function(err) {
-    alert('Error.  Check console.');
-    console.log('err:', err);
+    console.log(err);
+    alert('Error: '+err.responseJSON.code);
   });
 }
 
@@ -42,7 +42,6 @@ function registerUser(e) {
     location.href = '/';
   })
   .fail(function(err) {
-    alert('Error.  Check console.');
-    console.log('err:', err);
+    alert('Error: '+err.responseJSON.code);
   });
 }

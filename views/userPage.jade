@@ -5,10 +5,10 @@ block styles
 
 block content
   if admin
-    h1 My Page
+    h1 My User Page
   else
     h1 #{user.profileName}'s Page
-  .container.col-xs-2
+  .container.col-xs-3
     h2 Profile Pic
     if user.iUrl
       img(src= user.iUrl)
@@ -17,7 +17,7 @@ block content
   .container.col-xs-1.test
     h2 Name: 
     label Blurb: 
-  .container.col-xs-9.paddingLittle
+  .container.col-xs-8.paddingLittle
     h2= user.profileName
     p= user.blurb
   

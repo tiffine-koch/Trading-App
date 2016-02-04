@@ -17,9 +17,9 @@ router.get('/', authMW, function(req, res, next) {
 		res.render('index');
 });
 
-router.get('/secret', authMW, function(req, res, next) {
-  console.log('req.user:', req.user);
-  res.send('authorized user');
-});
+// router.get('/secret', authMW, function(req, res, next) {
+//   console.log('req.user:', req.user);
+//   res.send('authorized user');
+// });
 
 module.exports = router;

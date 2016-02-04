@@ -11,7 +11,7 @@ var tradeSchema = mongoose.Schema({
 	originalRecieverId: {
 		type: mongoose.Schema.Types.ObjectId, ref: 'Item'
 	},
-	status: {type: String, default: 'Proposed', enum: ['Proposed', 'Accepted', 'Declined', 'Offer Invalid']},
+	status: {type: String, default: 'Proposed', enum: ['Proposed', 'Accepted', 'Declined', 'Offer Expired']},
 	dateProposed: {type: Date, default: Date.now},
 	dateCompleted: {type: Date},
 	senderItemId: {
@@ -59,7 +59,7 @@ tradeSchema.statics.accept = function(id,cb) {
 													  		},
 																{'status':'Proposed'}
 															]
-												},{status:'Offer Invalid'}, {multi:true}, function(err, invalidTrades){
+												},{status:'Offer Expired'}, {multi:true}, function(err, invalidTrades){
 							cb(err,invalidTrades);
 						});
 
