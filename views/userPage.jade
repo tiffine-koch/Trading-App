@@ -5,19 +5,37 @@ block styles
 
 block content
   if admin
-    h1 My User Page
+    h1
+      span My User Page
   else
-    h1 #{user.profileName}'s Page
-  .container.col-xs-3
-    h2 Profile Pic
-    if user.iUrl
-      img(src= user.iUrl)
-    else
-      img(src='/img/defaultImage.jpg')
-  .container.col-xs-1.test
-    h2 Name: 
-    label Blurb: 
-  .container.col-xs-8.paddingLittle
-    h2= user.profileName
-    p= user.blurb
-  
+    h1 
+      span #{user.profileName}'s Page
+  .container.myContainers
+    .col-xs-3
+      h3 Profile Pic
+      if user.iUrl
+        img(src= user.iUrl)
+      else
+        img(src='/img/defaultImage.jpg')
+    .col-xs-1
+      h3 Name: 
+      label Blurb: 
+    .col-xs-8.paddingLittle
+      h3= user.profileName
+      p= user.blurb
+  if admin
+    .container.myContainers
+      h2 
+        span Admin Privillages
+      .col-xs-3.userLinks
+        h3 My Goods
+        .glyphicon.glyphicon-list-alt.myGlyphs
+      .col-xs-3.userLinks
+        h3 Shopping
+        .glyphicon.glyphicon-usd.myGlyphs
+      .col-xs-3.userLinks
+        h3 Transactions
+        .glyphicon.glyphicon-transfer.myGlyphs
+      .col-xs-3.userLinks
+        h3 User Settings
+        .glyphicon.glyphicon-wrench.myGlyphs

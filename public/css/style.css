@@ -5,12 +5,23 @@ body {
 }
 
 h1 {
+  text-align: center;
+}
+
+h1 span {
   font-size: 70px;
   font-weight: bold;
-  text-align: center;
   border-bottom: 5px solid rgb(198,198,198);
   border-radius: 5px;
+  padding-bottom: 3px;
 }
+
+h2 span {
+  border-bottom: 2px solid rgb(198,198,198);
+  border-radius: 2px;
+  padding-bottom: 1px;
+}
+
 
 #myContainer {
   background-color: rgb(53,63,69);

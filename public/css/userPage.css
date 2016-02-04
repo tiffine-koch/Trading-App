@@ -4,14 +4,45 @@
 	padding-bottom: 20px;
 }
 
-h1 {
-  padding-bottom: 7px;
-}
-
 img {
 	width: 100%;
 }
 
 .paddingLittle {
 	padding-left: 50px;
+}
+
+h2 {
+	text-align: center;
+	font-size: 35px;
+	padding-bottom: 10px;
+}
+
+.userLinks {
+	text-align: center;
+}
+
+.userLinks:hover {
+	color: rgb(53,63,69);
+	background-color: white;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.userLinks:active {
+	background-color: rgb(198,198,198);
+}
+
+.userLinks h3 {
+	padding: 0px;
+	margin: 0px;
+}
+
+.myGlyphs {
+	width: 100%;
+	font-size: 40px;
+}
+
+.myContainers {
+	padding-right: 30px;
 }
