@@ -34,6 +34,6 @@ h2 span {
 	display: none;
 }
 
-form {
+#loginUser , #registerUser {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }

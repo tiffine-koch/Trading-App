@@ -1,0 +1,29 @@
+extends layout
+
+block styles
+
+block content
+  h1#userIdHolder(data-uid=uID)
+    span New Barter Item
+  form#itemCreate.form-horizontal
+    fieldset
+      legend Enter Item Info Below
+      .form-group
+        label.col-lg-2.control-label(for='iName') Name
+        .col-lg-10
+          input#iName.form-control(type='text', placeholder="Enter Item's name here")
+      .form-group
+        label.col-lg-2.control-label(for='iUrl') Image
+        .col-lg-10
+          input#iUrl.form-control(type='url', placeholder="Enter your image url here")
+      .form-group
+        label.col-lg-2.control-label(for='iDesc') Description
+        .col-lg-10
+          textarea#iDesc.form-control(rows='3') 
+      .form-group
+        .col-lg-10.col-lg-offset-2
+          button.btn.btn-default(type='reset') Cancel
+          button.btn.btn-primary(type='submit') Create Item
+
+block scripts
+  script(src="/js/newItem.js")

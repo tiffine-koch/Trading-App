@@ -1,9 +1,34 @@
 extends layout
 
 block styles
+  link(rel="stylesheet", href="/css/myGoods.css")
 
 block content
   h1
     span Inventory
   .text-right
-    a.btn.btn-primary(href='#') New Barter Item
+    a.btn.btn-primary(href='/newItem') New Barter Item
+  table.table.table-striped.table-hover
+    thead
+      tr
+        th Name
+        th Description
+        th Date Created
+        th Image
+        th Tradeability
+    tbody
+      each item, index in items
+        tr(data-itemId= item._id)
+          td= item.name
+          td= item.description
+          td(data-date= item.dateCreated)= dates[index]
+          td
+            if item.iURL
+              img(src= item.iURL)
+            else
+              img(src='/img/noImage.png')
+          td
+            button.btn.btn-success.tAvalability(type='button', data-toggle='button', data-tval= item.tradeability) Avalability
+
+block scripts
+  script(src="/js/myGoods.js")
