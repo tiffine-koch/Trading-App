@@ -20,22 +20,26 @@ block content
     .col-xs-1
       h3 Name: 
       label Blurb: 
-    .col-xs-8.paddingLittle
+    .col-xs-8
       h3= user.profileName
       p= user.blurb
   if admin
     .container.myContainers
       h2 
         span Admin Privillages
-      .col-xs-3.userLinks
-        h3 My Goods
-        .glyphicon.glyphicon-list-alt.myGlyphs
-      .col-xs-3.userLinks
-        h3 Shopping
-        .glyphicon.glyphicon-usd.myGlyphs
-      .col-xs-3.userLinks
-        h3 Transactions
-        .glyphicon.glyphicon-transfer.myGlyphs
-      .col-xs-3.userLinks
-        h3 User Settings
-        .glyphicon.glyphicon-wrench.myGlyphs
+      a(href='/myGoods')
+        .col-xs-3.userLinks
+          h3 My Goods
+          .glyphicon.glyphicon-list-alt.myGlyphs
+      a(href='/')
+        .col-xs-3.userLinks
+          h3 Shopping
+          .glyphicon.glyphicon-usd.myGlyphs
+      a(href='/')
+        .col-xs-3.userLinks
+          h3 Transactions
+          .glyphicon.glyphicon-transfer.myGlyphs
+      a(href='/')
+        .col-xs-3.userLinks
+          h3 User Settings
+          .glyphicon.glyphicon-wrench.myGlyphs

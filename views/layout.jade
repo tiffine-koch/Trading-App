@@ -4,6 +4,7 @@ html
     title Cow Meets Goat
     link(rel='stylesheet', href='/lib/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/lib/slate/slate.css')
+    link(href='https://fonts.googleapis.com/css?family=Cinzel', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='/css/style.css')
     block styles
   body
@@ -15,11 +16,11 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.homePageUrl.navbar-brand(href='/') Cow Meets Goat
+          a.navbar-brand(href='/') Cow Meets Goat
         #navbar.navbar-collapse.collapse
           ul.nav.navbar-nav
             li
-              a.homePageUrl(href='/') Home
+              a(href='/') Home
           ul.nav.navbar-nav.navbar-right
             form#loginUser.navbar-form.navbar-left(role='search')
               .form-group

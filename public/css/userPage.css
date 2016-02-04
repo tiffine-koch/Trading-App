@@ -1,25 +1,15 @@
 
-
-#myContainer {
-	padding-bottom: 20px;
-}
-
 img {
 	width: 100%;
 }
 
-.paddingLittle {
-	padding-left: 50px;
-}
-
-h2 {
-	text-align: center;
-	font-size: 35px;
-	padding-bottom: 10px;
-}
-
 .userLinks {
 	text-align: center;
+}
+
+.userLinks h3 {
+	padding: 0px;
+	margin: 0px;
 }
 
 .userLinks:hover {
@@ -33,16 +23,12 @@ h2 {
 	background-color: rgb(198,198,198);
 }
 
-.userLinks h3 {
-	padding: 0px;
-	margin: 0px;
-}
-
 .myGlyphs {
-	width: 100%;
-	font-size: 40px;
+	font-size: 50px;
+	font-weight: bold;
 }
 
 .myContainers {
-	padding-right: 30px;
+	font-family: 'Cinzel', serif;
+	padding-right: 45px;
 }
